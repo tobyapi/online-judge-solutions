@@ -2,18 +2,17 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 func gcd(a int, b int) int {
 	for b != 0 {
 		a, b = b, int(a%b)
 	}
-	return int(math.Abs(float64(a)))
+	return a
 }
 
 func lcm(a int, b int) int {
-	return int(math.Abs(float64(a / gcd(a, b) * b)))
+	return a / gcd(a, b) * b
 }
 
 func main() {
